@@ -1,0 +1,41 @@
+{} = untuk penggunaan sintaks javascript
+() = penguunaan sintaks jsx
+
+Core component
+- component
+-Props
+-State
+
+1. Komponen
+
+Komponen pada React pada dasarnya adalah function pada java script
+
+2.Props
+
+props ditangkap sebagai object ketika komponen dibuat
+
+=>props refactor
+gunakan destructuring, ternary operator
+
+3. State
+
+data yang berubag seiring waktu disebut dengan State
+
+= State dan Hoks
+Salah satu Hoks yang digunakan untuk mengelola state adalah setState(), yang mengembalikan nilai berupa array, dan bisa diakses dengan destructuring
+= Elemen pertama pada array adalah nilai statenya dan elemen kedua merupakan function untuk mengubah nilainya
+=nama function boleh apa aja , tapi biasanya diawali dengan set lalu nama nilai statenya
+=====> [likes, setLikes] = destructuring
+likes= variable
+setLikes= fungsi / Upadter function
+const [likes, setLikes] = React.useState();
+
+=bisa juga memberi nilai awal pada nilai statenya dengan mengisi argumen pada useState()
+const [likes, setLikes] = React.useState(0);
+
+==state Upadter function
+mengubah nilai likes agar bertambah satu setiap tombol di klik dan akan kita lakukan dalam function handleClick()
+
+function handleClick(){
+    setLikes(likes+1);
+}

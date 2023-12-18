@@ -1,0 +1,70 @@
+<!-- memulai reat tanpa menginstal apapun -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React tanpa download file</title>
+    <!-- untuk dom -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <img src="" alt="" />
+    <!-- untuk babel/jsx -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script type="text/jsx"> => bisa pakai jsx tapi tulisan tidak berwarna -->
+    <script type="text/babel">
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      //menampilkan hasil kode
+      root.render(
+        <>
+          <h1 className='heading'> Belajar pertama React WPU 👍👍</h1>
+          <img src='/Images/VB_FCTC_DARK.png' width='80' heignt='80' alt='FCTC' />
+          <p
+            onClick={(e) => {
+              alert('oke !');
+            }}
+          >
+            Belajar React Menyenangkan !
+          </p>
+        </>
+      );
+    </script>
+  </body>
+</html>
+
+<!-- Aturan jsx 
+1. jsx hanya mengembalikan 1 komponen saja jika lebih dari 1 komponen maka harus dibungkus dengan tag
+=> contoh yang salah
+=================
+ root.render(<h1> Belajar pertama React WPU 👍👍</h1>
+              <img src="" alt="">  
+            <h1> asik  banget 👍👍</h1>
+
+ );
+ =>penulisan yang benar
+ ======================
+root.render(<>
+            <h1> Belajar pertama React WPU 👍👍</h1>
+              <img src="" alt=""/>  
+            <h1> asik  banget 👍👍</h1>
+            </>
+ );
+/////////////////////////////////////////////////////////////////////////////
+2. Harus menutup semua tag
+=> contoh salah
+<img src="" alt=""> 
+=>penulisan yang benar
+<img src="" alt=""/> 
+///////////////////////////////////////////////////////////////////////////
+3. gunakan camelcase untuk atribut
+Contoh 
+onClick
+ada beberapa perubahan di jsx contohnya class menjadi className
+? karena class sudah digunakan oleh sintaks javascript
+
+-->

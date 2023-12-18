@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Komponen function</title>
+    <!-- untuk dom -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- untuk babel/jsx -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script type="text/jsx"> => bisa pakai jsx tapi tulisan tidak berwarna -->
+    <script type="text/babel">
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      //menampilkan hasil kode
+      // nama function harus menggunakan huruf besar diawal
+      function Main() {
+        return (
+          <>
+            <h1 className='heading'> Belajar pertama React WPU 👍👍</h1>
+            <img src='/Images/VB_FCTC_DARK.png' width='80' heignt='80' alt='FCTC' />
+            <p
+              onClick={(e) => {
+                alert('oke !');
+              }}
+            >
+              Belajar React Menyenangkan !
+            </p>
+          </>
+        );
+      }
+      // nested function
+      function HomePage() {
+        return (
+          <>
+            <h1>Home Page</h1>
+            <Main />
+          </>
+        );
+      }
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>

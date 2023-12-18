@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Props</title>
+    <!-- untuk dom -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <!-- untuk babel/jsx -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <!-- <script type="text/jsx"> => bisa pakai jsx tapi tulisan tidak berwarna -->
+    <script type="text/babel">
+      const container = document.getElementById('root');
+      const root = ReactDOM.createRoot(container);
+      //menampilkan hasil kode
+      // nama function harus menggunakan huruf besar diawal
+      function Main() {
+        return (
+          <>
+            <h1 className='heading'> Belajar pertama React WPU 👍👍</h1>
+            <img src='/Images/VB_FCTC_DARK.png' width='80' heignt='80' alt='FCTC' />
+            <p
+              onClick={(e) => {
+                alert('oke !');
+              }}
+            >
+              Belajar React Menyenangkan !
+            </p>
+          </>
+        );
+      }
+      // agar nilai terisi default
+      function Header({ name }) {
+        return <h1> Belajar web bersama {name ? name : 'WPU'} 👌😊 </h1>;
+      }
+
+      function List() {
+        // aray nim harus memiliki nilai yang berbeda karena akan digunakan menjadi key
+        const nims = ['123', '1223', '12323'];
+        return (
+          <>
+            <Header name='WPU' />
+            <ul>
+              {nims.map((nim) => (
+                <li key={nim}>{nim}</li>
+              ))}
+            </ul>
+          </>
+        );
+      }
+      // nested function
+      function HomePage() {
+        const [likes, setLikes] = React.useState(0);
+
+        function handleClick() {
+          setLikes(likes + 1);
+        }
+        return (
+          <>
+            <h1>Header</h1>
+            <List />
+            <button onClick={handleClick}> Likes {likes}</button>
+          </>
+        );
+      }
+      root.render(<HomePage />);
+    </script>
+  </body>
+</html>
